@@ -550,8 +550,9 @@ class TMXSerializer(object):
                 height = int(subelem.attrib.pop('height', 0))
                 if width or height:
                     kwargs['pixel_size'] = int(width), int(height)
-                if not kwargs.get('value'):
-                    y += height
+                # if not kwargs.get('value'):
+                #     y += height
+
                 kwargs['pixel_pos'] = x, y
                 assert not subelem.attrib, (
                     'Unexpected object attributes: %s' % subelem.attrib)
